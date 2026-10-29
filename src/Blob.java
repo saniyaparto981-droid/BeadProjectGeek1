@@ -9,36 +9,47 @@ public class Blob implements IBlob {
     @Override
     public void add(double x, double y) {
         positions.add(Factory.createPixel(x,y));
-
     }
 
     @Override
     public int mass() {
-        return 0;
+        return positions.size();
     }
 
     @Override
     public double distance(IBlob that) {
-        return 0;
+        return Math.sqrt(
+                Math.pow(blobCenter.getX() - that.getBlobCenter().getX(), 2)
+                        + Math.pow(blobCenter.getY() - that.getBlobCenter().getY(), 2)
+        );
     }
 
     @Override
     public void setBlobCenter() {
+        double x = 0;
+        double y = 0;
 
+        for (IPixel point : positions) {
+            x += point.getX();
+            y += point.getY();
+        }
+
+        blobCenter = Factory.createPixel(x/ positions.size(), y/ positions.size());
     }
 
     @Override
     public ArrayList<IPixel> getPositions() {
-        return null;
+        return this.positions;
     }
 
     @Override
     public void setPositions(ArrayList<IPixel> positions) {
+        this.positions=positions;
 
     }
 
     @Override
     public IPixel getBlobCenter() {
-        return null;
+        return this.blobCenter;
     }
 }
