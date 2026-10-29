@@ -1,7 +1,6 @@
 import java.util.ArrayList;
-import java.util.LinkedList;
 
-public class pixel implements IPixel {
+public class Pixel implements IPixel {
 
 
     private double x;
@@ -9,7 +8,7 @@ public class pixel implements IPixel {
     private IPixel fatherPixel;
     private ArrayList<IPixel> Children;
 
-    public pixel(int x, int y){
+    public Pixel(double x, double y){
 
         this.x=x;
         this.y=y;
