@@ -12,7 +12,7 @@ public class Pixel implements IPixel {
 
         this.x=x;
         this.y=y;
-        Children=new ArrayList();
+        Children=new ArrayList<IPixel>();
         this.fatherPixel=null;
 
     }

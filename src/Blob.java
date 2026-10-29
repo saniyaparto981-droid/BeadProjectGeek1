@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Blob implements IBlob {
 
 
-    private ArrayList<IPixel> positions;
+    private ArrayList<IPixel> positions = new ArrayList<IPixel>();
     private IPixel blobCenter;
 
     @Override
